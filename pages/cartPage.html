@@ -1,0 +1,716 @@
+﻿<!DOCTYPE html>
+<script src="../frames/js/jquery/2.0.0/jquery.min.js"></script>
+<link href="../frames/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<script src="../frames/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+<style>
+body{
+	font-size: 12px;
+	font-family: Arial;
+}
+.nav_top a{
+	color: #999;
+}
+.tmallRed{
+	color: #C40000 !important;
+}
+nav.nav_top{
+	background-color: #f2f2f2;
+	padding: 5px 0px;
+	border-bottom: 1px solid #e7e7e7;
+}
+div.nav_middle{
+	max-width: 1024px;
+	margin: 0px auto;
+}
+nav.nav_top span{
+	margin: 0px 20px;
+	color: #999;
+}
+.nav_top span.glyphicon{
+	margin-right: 0px !important;
+}
+nav.nav_top a.login{
+	display: inline-block;
+	margin-right: 20px;
+}
+.nav_top a{
+	color: #999;
+}
+nav.nav_top a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+
+div.simpleSearchDiv{
+	max-width: 1024px;
+	margin: 0px auto;
+	position: relative;
+	height: 70px;
+}
+div.simpleSearch{
+	width: 300px;
+	height: 40px;
+	background-color: #C40000;
+	padding: 1px;
+	margin: 10px 20px 40px;
+	display: block;
+}
+div.simpleSearch input{
+	width: 225px;
+	height: 34px;
+	border: 1px solid transparent;
+	margin: 2px;
+	outline: none;
+}
+div.simpleSearch button{
+	width: 60px;
+	border: 1px solid transparent;
+	background-color: #C40000;
+	font-size: 14px;
+	color: white;
+	/*font-weight: bold;*/
+}
+div.searchBelow{
+	margin-left: -20px;
+	margin-top: 3px;
+}
+div.searchBelow span{
+	color: #999;
+}
+div.searchBelow a{
+	color: #999;
+	margin: 0px 20px;
+    font-size: 14px;
+}
+div.searchBelow a:hover{
+	text-decoration: none;
+	color: #C40000;
+}
+.simpleSearchDiv img{
+	position: absolute;
+	top: 50px;
+	left: 10px;
+	width: 140px;
+}
+
+.footer_ensure,.footer_desc a{
+	color: #999;
+}
+.footer_ensure,.footer_desc a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+div.footer{
+	margin: 10px 0px;
+	border-top: 1px solid #e7e7e7;
+}
+div.footer_ensure{
+	margin: 24px 0px;
+	text-align: center;
+}
+div.fd_middle{
+	max-width: 1024px;
+	margin: 0px auto;
+}
+div.footer_desc{
+	margin: 0px 20px;
+	border-top: 1px solid #e7e7e7;
+	padding: 30px;
+}
+div.footer_desc div.descColumn{
+	width: 20%;
+	float: left;
+	padding-left: 15px;
+}
+div.footer_desc div.descColumn span.descColumnTitle{
+    font-size: 16px;
+    color: #646464;
+    font-weight: bold;
+}
+div.footer_desc div.descColumn a{
+	display: block;
+	padding-top: 3px;
+}
+div.footer_desc div.descColumn img{
+	display: block;
+	padding-top: 3px;
+}
+
+.copyright a{
+	color: white;
+}
+.copyright a:hover{
+	text-decoration: none;
+	color: white;
+}
+div.footer_bottom{
+	max-width: 1024px;
+	margin: 0px auto;
+}
+div.copyright{
+	background-color: black;
+	border-top: 2px solid #C40000;
+}
+div.copyright div.white_link{
+	padding-top: 15px;
+	padding-left: 10px;
+}
+div.copyright div.white_link a{
+	margin: 0px 5px;
+}
+div.copyright div.white_link span.slash{
+	color: white;
+}
+div.copyright div.license{
+	margin-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+div.copyright div.license span{
+	color: #A4A4A4;
+}
+div.copyright div.license div{
+	padding-top: 10px;
+}
+div.copyright div.license div.copyrightYear{
+	color: #686868;
+	
+}
+img.cateye{
+	margin-left: 173px;
+}
+
+div.cartDiv{
+	max-width: 1013px;
+	margin: 10px auto;
+	color: black;
+}
+div.cartTitle span.cartTitlePrice{
+    color: #C40000;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0px 5px 0px 3px;
+} 
+div.cartTitle button{
+	background-color: #AAA;
+	border: 1px solid #AAA;
+	color: white;
+	width: 53px;
+	height: 25px;
+	border-radius: 2px;
+}
+div.cartFoot{
+	background-color: #e5e5e5;
+	margin: 10px 0px;
+	line-height: 50px;
+	padding-left: 20px;
+}
+div.cartFoot span.cartSumNumber{
+	color: #C40000;
+	font-weight: bold;
+	font-size: 18px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+div.cartFoot span.cartSumPrice{
+	color: #C40000;
+	font-weight: bold;
+	font-size: 20px
+}
+div.cartFoot button{
+	background-color: #AAA;
+	width: 120px;
+	height: 50px;
+	border-width: 0px;
+	font-size: 20px;
+	color: white;
+}
+
+div.cartDiv div.cartProductList{
+	margin: 20px 0;
+}
+.cartProductTable{
+	font-size: 12px;
+	width: 100%;
+}
+.cartProductTable th{
+	color: #3C3C3C;
+	padding: 20px;
+	font-weight: normal;
+}
+.cartProductItemTR{
+	border: 1px solid #CCC;
+}
+.cartProductItemTR td{
+	padding: 20px;
+}
+img.cartProductImage{
+	width: 80px;
+	height: 80px;
+	border: 1px solid #EEE;
+	padding: 1px;
+}
+.cartProductTable th.selectAndImage{
+    width: 150px;
+}
+.cartProductItemTR .deleteOrderItem{
+	width: 30px;
+}
+div.cartProductLinkOutDiv{
+	position: relative;
+	height: 80px;
+}
+a.cartProductLink{
+	color: #3C3C3C;
+}
+a.cartProductLink:hover{
+	color: #C40000;
+	text-decoration: underline;
+}
+div.cartProductLinkInnerDiv{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+.cartProductItemOriginalPrice{
+	font-weight: bold;
+	color: #9C9C9C;
+	text-decoration: line-through;
+	font-size: 13px;
+	display: block;
+}
+.cartProductItemPromotionPrice{
+	color: #C40000;
+	font-size: 14px;
+	font-weight: bold;
+}
+.cartProductChangeNumberDiv{
+	width: 80px;
+	border: 1px solid #E5E5E5;
+}
+.cartProductChangeNumberDiv a{
+	width: 14px;
+	text-align: center;
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+}
+.orderItemNumberSetting{
+	width: 42px;
+	border: 1px solid #AAA;
+	display: inline-block;
+}
+.cartProductItemSmallSumPrice{
+	color: #C40000;
+	font-size: 14px;
+	font-weight: bold;
+}
+.deleteOrderItem{
+	color: #5e5e5e;
+}
+.deleteOrderItem:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+img.cartProductItemIfSelected, img.selectAllItem{
+    cursor: pointer;
+}
+</style>
+
+<script>
+//以千进制格式化金额
+	function formatMoney(num) {
+        var source = String(num).split(".");//按小数点分成2部分
+        source[0] = source[0].replace(new RegExp('(\\d)(?=(\\d{3})+$)','ig'),"$1,");//只将整数部分进行都好分割
+        return source.join(".");//再将小数部分合并进来
+    }
+
+    //商品被选中时，修改按钮为可点击状态以及背景色
+    function syncCreateOrderButton(){
+    	var selectAny = false;
+    	$(".cartProductItemIfSelected").each(function(){
+    		if("selectit"==$(this).attr("selectit")){
+    			selectAny = true;
+    		}
+    	});
+    	if(selectAny){
+    		$(".creatOrderButton").removeAttr("disabled");
+    		$(".creatOrderButton").css("background-color","#C40000");
+    	}
+    	else{
+    		$(".creatOrderButton").css("background-color","rgb(170,170,170)");
+    		$(".creatOrderButton").attr("disabled","disabled");
+    	}
+    }
+
+    //同步全选状态，当全选被选中时，切换背景图片
+    function syncSelect(){
+        var selectAll = true;
+        $(".cartProductItemIfSelected").each(function(){
+        	if("false"==$(this).attr("selectit")){
+        		selectAll = false;
+        	}
+        });
+        if(selectAll){
+        	$(".selectAllItem").attr("src","../images/site/cartSelected.png");
+        }
+        else{
+        	$(".selectAllItem").attr("src","../images/site/cartNotSelected.png");
+        }
+    }
+
+    //遍历选中的商品，计算总的商品数以及总价格
+    function calcCartSumPriceAndNumber(){
+        var sum = 0;
+        var totalNum = 0;
+        $(".cartProductItemIfSelected[selectit='selectit']").each(function(){
+        	var oiid = $(this).attr("oiid");
+        	var price = $(".cartProductItemSmallSumPrice[oiid="+oiid+"]").text();
+        	price = price.replace(/,/,"");
+        	price = price.replace(/￥/,"");
+        	sum+= new Number(price);
+        	var num = $(".orderItemNumberSetting[oiid="+oiid+"]").val();
+        	//alert(num);
+        	totalNum += new Number(num);
+        });
+        $(".cartTitlePrice").html("￥"+formatMoney(sum));
+        $(".cartSumPrice").html("￥"+formatMoney(sum));
+        $(".cartSumNumber").html(totalNum);
+    }
+
+    //同步选中的商品，根据该商品的数量及单价计算该商品的总价格
+    function syncPrice(pid,num,price){
+        var oisum = 0;
+        $(".orderItemNumberSetting[pid="+pid+"]").val(num);
+        oisum = num * price;
+        //alert(oisum);
+        $(".cartProductItemSmallSumPrice[pid="+pid+"]").html("￥"+formatMoney(oisum));
+        calcCartSumPriceAndNumber();
+    }
+
+    $(function(){    
+    	$(".cartProductItemIfSelected").click(function(){
+    		var selectit = $(this).attr("selectit");
+    		if("selectit"==selectit){
+    			$(this).attr("src","../images/site/cartNotSelected.png");
+    			$(this).attr("selectit","false");
+    			$(this).parents("tr.cartProductItemTR").css("background-color","#fff");
+    		}
+    		else{
+    			$(this).attr("src","../images/site/cartSelected.png");
+    			$(this).attr("selectit","selectit");
+    			$(this).parents("tr.cartProductItemTR").css("background-color","#FFF8E1");
+    		}
+    		syncSelect();
+    		syncCreateOrderButton();
+            calcCartSumPriceAndNumber();
+    	});
+
+    	$(".selectAllItem").click(function(){
+    		var selectit = $(this).attr("selectit");
+    		if("selectit"==selectit){
+    			$(".selectAllItem").attr("src","../images/site/cartNotSelected.png");
+    			$(".selectAllItem").attr("selectit","false");
+    			$(".cartProductItemIfSelected").each(function(){
+    				$(this).attr("src","../images/site/cartNotSelected.png");
+    				$(this).attr("selectit","false");
+    				$(this).parents("tr.cartProductItemTR").css("background-color","#fff");
+    			});
+    		}
+    		else{
+    			$(".selectAllItem").attr("src","../images/site/cartSelected.png");
+    			$(".selectAllItem").attr("selectit","selectit");
+    			$(".cartProductItemIfSelected").each(function(){
+    				$(this).attr("src","../images/site/cartSelected.png");
+    				$(this).attr("selectit","selectit");
+    				$(this).parents("tr.cartProductItemTR").css("background-color","#FFF8E1");
+    			});
+    		}
+    		syncCreateOrderButton();
+    		calcCartSumPriceAndNumber();
+    	});
+
+    	$(".orderItemNumberSetting").keyup(function(){
+    		var pid = $(this).attr("pid");
+    		var num = $(this).val();
+    		var stock = $(".orderItemStock[pid="+pid+"]").text();
+    		var price = $(".orderItemPromotionPrice[pid="+pid+"]").text();
+    		num = parseInt(num);
+    		if(isNaN(num))
+    			num = 1;
+    		if(num <= 0)
+    			num = 1;
+    		if(num > stock)
+    			num = stock;
+    		syncPrice(pid,num,price);
+    	});
+
+    	$(".numberMinus").click(function(){
+    		var pid = $(this).attr("pid");
+    		var num = $(".orderItemNumberSetting[pid="+pid+"]").val();
+    		var price = $(".orderItemPromotionPrice[pid="+pid+"]").text();
+    		num = parseInt(num);
+    		num--;
+    		if(num<=0)
+    			num = 1;
+    		syncPrice(pid,num,price);
+    	});
+
+    	$(".numberPlus").click(function(){
+    		var pid = $(this).attr("pid");
+    		var stock = $(this).attr("stock");
+    		var num = $(".orderItemNumberSetting[pid="+pid+"]").val();
+    		var price = $(".orderItemPromotionPrice[pid="+pid+"]").text();
+    		num = parseInt(num);
+    		num++;
+    		if(num > stock)
+    			num = stock;
+    		syncPrice(pid,num,price);
+    	});
+    });
+</script>
+
+<nav class="nav_top">
+<div class="nav_middle">
+	<a href="homePage.html">
+		<span class="glyphicon glyphicon-home tmallRed"></span>
+		天猫首页
+	</a>
+
+	<span>喵，欢迎来到天猫</span>
+	<a href="#nowhere" class="login">请登录</a>
+	<a href="#nowhere">免费注册</a>
+
+	<div class="pull-right">
+		<a href="boughtPage.html">我的订单</a>
+		<a href="#nowhere">
+			<span class="glyphicon glyphicon-shopping-cart tmallRed"></span>
+			购物车<strong>2</strong>件
+		</a>
+	</div>
+</div>
+</nav>
+
+<div class="simpleSearchDiv">
+	<a href="#nowhere">
+		<img src="../images/site/simpleLogo.png">
+	</a>
+
+	<div class="pull-right simpleSearch">
+		<input type="text" name="keyword" placeholder="男士西服 原汁机">
+		<button type="submit" class="searchBtn">搜天猫</button>
+		<div class="searchBelow">
+			<a href="#nowhere">冰箱</a><span>|</span>
+			<a href="#nowhere">空调</a><span>|</span>
+			<a href="#nowhere">男装</a><span>|</span>
+			<a href="#nowhere">女装</a>
+		</div>
+	</div>
+</div>
+
+<div class="cartDiv">
+	<div class="cartTitle pull-right">
+		<span>已选商品（不含运费）</span>
+		<span class="cartTitlePrice">￥0.00</span>
+		<button class="creatOrderButton" style="background-color: rgb(170,170,170);" disabled="disabled">结算</button>
+	</div>
+
+	<div class="cartProductList">
+		<table class="cartProductTable">
+			<thead>
+				<th class="selectAndImage">
+					<img src="../images/site/cartNotSelected.png" class="selectAllItem" selectit="false"> 全选
+				</th>
+				<th>商品信息</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th style="width: 120px;">金额</th>
+				<th class="operation">操作</th>
+			</thead>
+			<tbody>
+				<tr class="cartProductItemTR" oiid="936">
+					<td>
+						<img src="../images/site/cartNotSelected.png" class="cartProductItemIfSelected" oiid="936" selectit="false"">
+						<a href="#nowhere" style="display: none;"><img src="../images/site/cartSelected.png"></a>
+						<img src="../images/product/3665.jpg" width="40px" class="cartProductImage">
+					</td>
+					<td>
+						<div class="cartProductLinkOutDiv">
+							<a href="#nowhere" class="cartProductLink">美国iRobot扫地机器人吸尘器全自动家用智能扫地机650 天猫电器城</a>
+							<div class="cartProductLinkInnerDiv">
+								<img src="../images/site/creditcard.png" title="支持信用卡支付">
+								<img src="../images/site/7day.png" title="消费者保障服务，承诺7天退货">
+								<img src="../images/site/promise.png" title="消费者保障服务，承诺如实描述">
+							</div>
+						</div>
+					</td>
+					<td>
+						<span class="cartProductItemOriginalPrice">￥7580.0</span>
+						<span class="cartProductItemPromotionPrice">￥5306.0</span>
+					</td>
+					<td>
+						<div class="cartProductChangeNumberDiv">
+							<span pid="365" class="hidden orderItemStock">75</span>
+							<span pid="365" class="hidden orderItemPromotionPrice">5306.0</span>
+							<a href="#nowhere" class="numberMinus" pid="365">-</a>
+							<input value="1" autocomplete="off" class="orderItemNumberSetting" oiid="936" pid="365">
+							<a href="#nowhere" class="numberPlus" pid="365" stock="75">+</a>
+						</div>
+					</td>
+					<td>
+						<span class="cartProductItemSmallSumPrice" pid="365" oiid="936">￥5,306.00</span>
+					</td>
+					<td>
+						<a href="#nowhere" class="deleteOrderItem" oiid="936">删除</a>
+					</td>
+				</tr>
+
+				<tr class="cartProductItemTR" oiid="935">
+					<td>
+						<img src="../images/site/cartNotSelected.png" class="cartProductItemIfSelected" oiid="935" selectit="false">
+						<a href="#nowhere" style="display: none;"><img src="../images//site/cartSelected.png"></a>
+						<img src="../images/product/8510.jpg" width="40px" class="cartProductImage">
+					</td>
+					<td>
+						<div class="cartProductLinkOutDiv">
+							<a href="#nowhere" class="cartProductLink">阔腿裤三件套装女夏装2016新款大码雪纺时尚休闲气质棉麻九分裤潮</a>
+							<div class="cartProductLinkInnerDiv">
+								<img src="../images/site/creditcard.png" title="支持信用卡支付">
+								<img src="../images/site/7day.png" title="消费者保障服务，承诺7天退货">
+								<img src="../images/site/promise.png" title="消费者保障服务，承诺如实描述">
+							</div>
+						</div>
+					</td>
+					<td>
+						<span class="cartProductItemOriginalPrice">￥235.0</span>
+						<span class="cartProductItemPromotionPrice">￥152.75</span>
+					</td>
+					<td>
+						<div class="cartProductChangeNumberDiv">
+							<span pid="809" class="hidden orderItemStock">17</span>
+							<span pid="809" class="hidden orderItemPromotionPrice">152.75</span>
+							<a href="#nowhere" class="numberMinus" pid="809">-</a>
+							<input value="1" autocomplete="off" class="orderItemNumberSetting" oiid="935" pid="809">
+							<a href="#nowhere" class="numberPlus" pid="809" stock="17">+</a>
+						</div>
+					</td>
+					<td>
+						<span class="cartProductItemSmallSumPrice" pid="809" oiid="935">￥152.75</span>
+					</td>
+					<td>
+						<a href="#nowhere" class="deleteOrderItem" oiid="935">删除</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="cartFoot">
+		<img src="../images/site/cartNotSelected.png" class="selectAllItem" selectit="false">
+		<span>全选</span>
+		<div class="pull-right">
+			<span>已选商品<span class="cartSumNumber">0</span>件</span>
+			<span>合计（不含运费）：</span>
+			<span class="cartSumPrice">￥0.00</span>
+			<button class="creatOrderButton" style="background-color: rgb(170,170,170);" disabled="disabled">结 算</button>
+		</div>
+	</div>
+</div>
+
+<div class="footer" id="footer">
+	<div class="footer_ensure" id="footer_ensure">
+		<a href="#nowhere">
+			<img src="../images/site/ensure.png">
+		</a>
+	</div>
+
+	<div class="footer_desc" id="footer_desc">
+	<div class="fd_middle">
+		<div class="descColumn">
+			<span class="descColumnTitle">购物指南</span>
+			<a href="#nowhere">免费注册</a>
+			<a href="#nowhere">开通支付宝</a>
+			<a href="#nowhere">支付宝充值</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">天猫保障</span>
+			<a href="#nowhere">发票保障</a>
+			<a href="#nowhere">售后规则</a>
+			<a href="#nowhere">缺货赔付</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">支付方式</span>
+			<a href="#nowhere">快捷支付</a>
+			<a href="#nowhere">信用卡</a>
+			<a href="#nowhere">蚂蚁花呗</a>
+			<a href="#nowhere">货到付款</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">商家服务</span>
+			<a href="#nowhere">商家入驻</a>
+			<a href="#nowhere">商家中心</a>
+			<a href="#nowhere">天猫智库</a>
+			<a href="#nowhere">天猫规则</a>
+			<a href="#nowhere">物流服务</a>
+			<a href="#nowhere">喵言喵语</a>
+			<a href="#nowhere">运营服务</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">手机天猫</span>
+			<img src="../images/site/ma.png">
+		</div>
+	</div>
+	</div>
+	<div style="clear:both"></div>
+
+	<img class="cateye" src="../images/site/cateye.png">
+	<div class="copyright" id="copyright">
+	<div class="footer_bottom">
+		<div class="white_link">
+			<a href="#nowhere">关于天猫</a>
+			<a href="#nowhere">帮助中心</a>
+			<a href="#nowhere">开发平台</a>
+			<a href="#nowhere">诚聘英才</a>
+			<a href="#nowhere">联系我们</a>
+			<a href="#nowhere">网站合作</a>
+			<a href="#nowhere">法律声明</a>
+			<a href="#nowhere">知识产权</a>
+			<a href="#nowhere">廉正举报</a>
+		</div>
+		<div class="white_link">
+			<a href="#nowhere">阿里巴巴集团</a><span class="slash">|</span>
+			<a href="#nowhere">淘宝网</a><span class="slash">|</span>
+			<a href="#nowhere">天猫</a><span class="slash">|</span>
+			<a href="#nowhere">聚划算</a><span class="slash">|</span>
+			<a href="#nowhere">全球速变卖</a><span class="slash">|</span>
+			<a href="#nowhere">阿里巴巴国际交易市场</a><span class="slash">|</span>
+			<a href="#nowhere">1688</a><span class="slash">|</span>
+			<a href="#nowhere">阿里旅行</a><span class="slash">|</span>
+			<a href="#nowhere">阿里云计算</a><span class="slash">|</span>
+			<a href="#nowhere">阿里通信</a><span class="slash">|</span>
+			<a href="#nowhere">钉钉</a><span class="slash">|</span>
+			<a href="#nowhere">YunOS</a><span class="slash">|</span>
+			<a href="#nowhere">高德地图</a><span class="slash">|</span>
+			<a href="#nowhere">优视</a><span class="slash">|</span>
+			<a href="#nowhere">友盟</a><span class="slash">|</span>
+			<a href="#nowhere">虾米音乐</a><span class="slash">|</span>
+			<a href="#nowhere">天天动听</a><span class="slash">|</span>
+			<a href="#nowhere">支付宝</a><span class="slash">|</span>
+			<a href="#nowhere">蚂蚁金服</a><span class="slash">|</span>
+			<a href="#nowhere">花呗</a>
+		</div>
+		<div class="license">
+			<span>增值电信业务经营许可证：浙B2-20110446</span>
+			<span>网络文化经营许可证：浙网文[2025]0295-065号</span> 
+			<span>互联网医疗保健信息服务 审核同意书 浙卫网审 【2014】 6号</span>  
+			<span>互联网药品信息服务资质证书编号：浙-(经营性)-2012-0005</span>
+			<div class="copyrightYear">@2003-2018 TMALL.COM版权所有</div>
+			<div>
+				<img src="../images/site/copyRight1.jpg">
+                <img src="../images/site/copyRight2.jpg">
+			</div>
+		</div>
+	</div>
+    </div>
+</div>

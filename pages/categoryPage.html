@@ -1,0 +1,632 @@
+﻿<!DOCTYPE html>
+<script src="../frames/js/jquery/2.0.0/jquery.min.js"></script>
+<link href="../frames/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<script src="../frames/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+<style>
+body{
+	font-size: 12px;
+	font-family: Arial;
+}
+.nav_top a{
+	color: #999;
+}
+.tmallRed{
+	color: #C40000 !important;
+}
+nav.nav_top{
+	background-color: #f2f2f2;
+	padding: 5px 0px;
+	border-bottom: 1px solid #e7e7e7;
+}
+div.nav_middle{
+	max-width: 1024px;
+	margin: 0px auto;
+}
+nav.nav_top span{
+	margin: 0px 20px;
+	color: #999;
+}
+.nav_top span.glyphicon{
+	margin-right: 0px !important;
+}
+nav.nav_top a.login{
+	display: inline-block;
+	margin-right: 20px;
+}
+.nav_top a{
+	color: #999;
+}
+nav.nav_top a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+
+div.searchBar{
+	width: 400px;
+	height: 40px;
+	margin: 50px auto;
+	background-color: #C40000;
+	padding: 1px;
+	display: block;
+}
+div.searchBar input{
+	width: 275px;
+	border: 1px solid transparent;
+	height: 36px;
+	margin: 1px;
+	outline: none;
+}
+div.searchBar button{
+	width: 110px;
+	border: 1px solid transparent;
+	background-color: #C40000;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+div.searchBelow{
+	margin-left: -20px;
+	margin-top: 3px;
+}
+div.searchBelow span{
+	color: #999;
+}
+div.searchBelow a{
+	color: #999;
+	margin: 0px 20px;
+	font-size: 14px;
+}
+div.searchBelow a:hover{
+	text-decoration: none;
+	color: #C40000;
+}
+div.searchBarDiv img{
+	position: absolute;
+	top: 30px;
+	left: 130px;
+}
+
+.footer_ensure,.footer_desc a{
+	color: #999;
+}
+.footer_ensure,.footer_desc a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+div.footer{
+	margin: 10px 0px;
+	border-top: 1px solid #e7e7e7;
+}
+div.footer_ensure{
+	margin: 24px 0px;
+	text-align: center;
+}
+div.fd_middle{
+	max-width: 1024px;
+	margin: 0px auto;
+}
+div.footer_desc{
+	margin: 0px 20px;
+	border-top: 1px solid #e7e7e7;
+	padding: 30px;
+}
+div.footer_desc div.descColumn{
+	width: 20%;
+	float: left;
+	padding-left: 15px;
+}
+div.footer_desc div.descColumn span.descColumnTitle{
+    font-size: 16px;
+    color: #646464;
+    font-weight: bold;
+}
+div.footer_desc div.descColumn a{
+	display: block;
+	padding-top: 3px;
+}
+div.footer_desc div.descColumn img{
+	display: block;
+	padding-top: 3px;
+}
+
+.copyright a{
+	color: white;
+}
+.copyright a:hover{
+	text-decoration: none;
+	color: white;
+}
+div.footer_bottom{
+	max-width: 1024px;
+	margin: 0px auto;
+}
+div.copyright{
+	background-color: black;
+	border-top: 2px solid #C40000;
+}
+div.copyright div.white_link{
+	padding-top: 15px;
+	padding-left: 10px;
+}
+div.copyright div.white_link a{
+	margin: 0px 5px;
+}
+div.copyright div.white_link span.slash{
+	color: white;
+}
+div.copyright div.license{
+	margin-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+div.copyright div.license span{
+	color: #A4A4A4;
+}
+div.copyright div.license div{
+	padding-top: 10px;
+}
+div.copyright div.license div.copyrightYear{
+	color: #686868;
+	
+}
+img.cateye{
+	margin-left: 173px;
+}
+
+div.categoryPageDiv{
+	max-width: 1013px;
+	margin: 10px auto;
+}
+
+div.categoryPageDiv div.categorySortBar{
+	background-color: #FAF9F9;
+    margin: 40px 20px 20px;
+    padding: 4px;
+}
+div.categorySortBar table.categorySortBarTable{
+	display: inline-block;
+	border-collapse: collapse;  /*单元格间没有空隙*/
+}
+table.categorySortBarTable span.glyphicon{
+	font-size: 10px;
+}
+table.categorySortBarTable td{
+	height: 17px;
+	font-size: 12px;
+	border: 1px solid #CCCCCC;
+	padding: 3px;
+}
+table.categorySortBarTable td a{
+	color: #806F66;
+}
+table.categorySortBarTable td.grayColumn{
+	background-color: #F1EDEC;
+}
+table.categorySortBarTable td a:hover{
+	color: #C40000;
+}
+table.categorySortBarTable input{
+	border-width: 0px;
+	height: 15px;
+	width: 50px;
+}
+table.categorySortBarTable td.priceMiddleColumn{
+	color: #CCCCCC;
+	width: 5px;
+	vertical-align: middle;
+}
+table.categorySortBarTable td:hover{
+	background-color: #F1EDEC;
+}
+
+div.categoryProducts{
+	padding: 0px 20px 40px;
+}
+div.productUnit{
+	border: 3px solid #fff;
+	width: 225px;
+	height: 338px;
+	background-color: white;
+	float: left;
+	margin: 12px 5px;
+}
+div.productUnit:hover{
+	border-color: #C40000;
+}
+div.productUnitFrame{
+	border: 1px solid #eee;
+	height: 100%;
+}
+div.productUnitFrame:hover{
+	border-color: #C40000;
+}
+div.productUnitFrame img.productImage{
+	width: 100%;
+	height: 190px;
+}
+div.productUnitFrame span.productPrice{
+	color: #CC0000;
+	font-size: 20px;
+	padding-left: 5px;
+	display: block;
+}
+div.productUnitFrame a.productLink{
+	color: #333;
+	margin: 10px 0px;
+	height: 34px;
+	display: block;
+}
+div.productUnitFrame a.productLink:hover{
+	color: #C40000;
+}
+div.productUnitFrame a.tmallLink{
+	color: #999;
+	display: block;
+	text-decoration: underline;
+	margin: 10px 0px;
+}
+div.productUnitFrame a.tmallLink:hover{
+	color: #C40000;
+}
+div.productUnitFrame div.productInfo{
+	border-top: 1px solid #eee;
+	color: #999
+}
+div.productInfo span.monthDeal,div.productInfo span.productReview{
+    display: inline-block;
+    width: 90px;
+    height: 29px;
+    line-height: 29px;
+    padding-left: 5px;
+}
+div.productInfo span.productReview{
+	border-left: 1px solid #EEE;
+	border-right: 1px solid #eee;
+}
+span.productDealNumber{
+	font-weight: bold;
+	color: #B57C5B;
+}
+span.productReviewNumber{
+	font-weight: bold;
+	color: #3388BB;
+}
+div.productInfo img{
+	margin-left: 6px;
+}
+</style>
+
+<script>
+    $(function(){
+		$("input.sortBarPrice").keyup(function(){
+			var num = $(this).val();
+			if(num.length == 0){
+				$("div.productUnit").show();
+				return;
+			}
+
+			num = parseInt(num);
+			if(isNaN(num))
+				num = 1;
+			if(num <= 0)
+				num = 1;
+			$(this).val(num);
+
+			var begin = $("input.beginPrice").val();
+			var end = $("input.endPrice").val();
+			if(!isNaN(begin) && !isNaN(end)){
+				$("div.productUnit").hide();
+				$("div.productUnit").each(function(){
+					var price = $(this).attr("price");
+					price = new Number(price);
+					if(price <= end && price >= begin)
+						$(this).show();
+				});
+			}
+		});
+    });
+</script>
+
+<nav class="nav_top">
+    <div class="nav_middle">
+	<a href="homePage.html">
+		<span class="glyphicon glyphicon-home tmallRed"></span>
+		天猫首页
+	</a>
+
+	<span>喵，欢迎来到天猫</span>
+	<a href="#nowhere" class="login">请登录</a>
+	<a href="#nowhere">免费注册</a>
+
+	<div class="pull-right">
+		<a href="boughtPage.html">我的订单</a>
+		<a href="cartPage.html">
+			<span class="glyphicon glyphicon-shopping-cart tmallRed"></span>
+			购物车<strong>2</strong>件
+		</a>
+	</div>
+    </div>
+</nav>
+
+<div class="searchBarDiv">
+	<a href="#nowhere">
+		<img src="../images/site/logo.gif">
+	</a>
+
+	<div class="searchBar">
+		<input type="text" name="keyword" placeholder="平衡车 品牌女装">
+		<button class="searchBtn" type="submit">搜索</button>
+		<div class="searchBelow">
+			<a href="#nowhere">平衡车</a><span>|</span>
+		    <a href="#nowhere">扫地机器人</a><span>|</span>
+		    <a href="#nowhere">原汁机</a><span>|</span>
+		    <a href="#nowhere">冰箱</a>
+		</div>
+	</div>
+</div>
+
+<div class="categoryPageDiv">
+
+    <img src="../images/product/72.jpg">
+	<div class="categorySortBar">
+		<table class="categorySortBarTable categorySortTable">
+			<tbody>
+				<tr>
+					<td class="grayColumn"><a href="#nowhere">综合<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+					<td><a href="#nowhere">人气<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+					<td><a href="#nowhere">新品<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+					<td><a href="#nowhere">销量<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+					<td><a href="#nowhere">价格<span class="glyphicon glyphicon-resize-vertical"></span></a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="categorySortBarTable">
+			<tbody>
+				<tr>
+					<td><input type="text" placeholder="请输入" class="sortBarPrice beginPrice"></td>
+					<td class="grayColumn priceMiddleColumn">-</td>
+					<td><input type="text" placeholder="请输入" class="sortBarPrice endPrice"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+<script>
+	//测试
+	//点击categoryProducts里的a跳转到同一个productPage.html页面
+	$(function(){
+		$(".categoryProducts a").attr("href","productPage.html");
+	})
+</script>
+	<div class="categoryProducts">
+
+		<div class="productUnit" price="799.2">
+			<div class="productUnitFrame">
+				<a href="#nowhere"><img src="../images/product/7058.jpg" class="productImage" width="100px"></a>
+				<span class="productPrice">￥799.20</span>
+				<a href="#nowhere" class="productLink">MAXFEEL休闲男士手包真皮手拿包大容量信封包手抓包夹包软韩版潮</a>
+				<a href="#nowhere" class="tmallLink">天猫专卖</a>
+				<div class="productInfo">
+					<span class="monthDeal">月成交<span class="productDealNumber">16笔</span></span>
+					<span class="productReview">评价<span class="productReviewNumber">14</span></span>
+					<span class="wangwang">
+						<a href="#nowhere" class="wangwanglink"><img src="../images/site/wangwang.png"></a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="productUnit" price="511.2">
+			<div class="productUnitFrame">
+				<a href="#nowhere"><img src="../images/product/7047.jpg" class="productImage" width="100px"></a>
+				<span class="productPrice">￥511.20</span>
+				<a href="#nowhere" class="productLink">宾度 男士手包真皮大容量手拿包牛皮个性潮男包手抓包软皮信封包</a>
+				<a href="#nowhere" class="tmallLink">天猫专卖</a>
+				<div class="productInfo">
+					<span class="monthDeal">月成交<span class="productDealNumber">49笔</span></span>
+					<span class="productReview">评价<span class="productReviewNumber">18</span></span>
+					<span class="wangwang">
+						<a href="#nowhere" class="wangwanglink"><img src="../images/site/wangwang.png"></a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="productUnit" price="448.2">
+			<div class="productUnitFrame">
+				<a href="#nowhere"><img src="../images/product/7036.jpg" class="productImage" width="100px"></a>
+				<span class="productPrice">￥448.20</span>
+				<a href="#nowhere" class="productLink">唯美诺新款男士手包男包真皮大容量小羊皮手拿包信封包软皮夹包潮</a>
+				<a href="#nowhere" class="tmallLink">天猫专卖</a>
+				<div class="productInfo">
+					<span class="monthDeal">月成交<span class="productDealNumber">34笔</span></span>
+					<span class="productReview">评价<span class="productReviewNumber">16</span></span>
+					<span class="wangwang">
+						<a href="#nowhere" class="wangwanglink"><img src="../images/site/wangwang.png"></a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="productUnit" price="411.6">
+			<div class="productUnitFrame">
+				<a href="#nowhere"><img src="../images/product/7025.jpg" class="productImage" width="100px"></a>
+				<span class="productPrice">￥411.60</span>
+				<a href="#nowhere" class="productLink">英伦邦纹男士手包牛皮大容量真皮手拿包手抓包双拉链商务正品软皮</a>
+				<a href="#nowhere" class="tmallLink">天猫专卖</a>
+				<div class="productInfo">
+					<span class="monthDeal">月成交<span class="productDealNumber">25笔</span></span>
+					<span class="productReview">评价<span class="productReviewNumber">19</span></span>
+					<span class="wangwang">
+						<a href="#nowhere" class="wangwanglink"><img src="../images/site/wangwang.png"></a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="productUnit" price="157.25">
+			<div class="productUnitFrame">
+				<a href="#nowhere"><img src="../images/product/7014.jpg" class="productImage" width="100px"></a>
+				<span class="productPrice">￥157.25</span>
+				<a href="#nowhere" class="productLink">劳迪莱斯男士手包休闲手拿包牛皮大容量钱包男包软面小包包手抓包</a>
+				<a href="#nowhere" class="tmallLink">天猫专卖</a>
+				<div class="productInfo">
+					<span class="monthDeal">月成交<span class="productDealNumber">17笔</span></span>
+					<span class="productReview">评价<span class="productReviewNumber">16</span></span>
+					<span class="wangwang">
+						<a href="#nowhere" class="wangwanglink"><img src="../images/site/wangwang.png"></a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="productUnit" price="268.2">
+			<div class="productUnitFrame">
+				<a href="#nowhere"><img src="../images/product/7003.jpg" class="productImage" width="100px"></a>
+				<span class="productPrice">￥268.20</span>
+				<a href="#nowhere" class="productLink">帕朗尼男士手拿包真皮手包商务休闲头层牛皮软牛皮大容量休闲钱包</a>
+				<a href="#nowhere" class="tmallLink">天猫专卖</a>
+				<div class="productInfo">
+					<span class="monthDeal">月成交<span class="productDealNumber">5笔</span></span>
+					<span class="productReview">评价<span class="productReviewNumber">19</span></span>
+					<span class="wangwang">
+						<a href="#nowhere" class="wangwanglink"><img src="../images/site/wangwang.png"></a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="productUnit" price="233.4">
+			<div class="productUnitFrame">
+				<a href="#nowhere"><img src="../images/product/6992.jpg" class="productImage" width="100px"></a>
+				<span class="productPrice">￥233.40</span>
+				<a href="#nowhere" class="productLink">编织手包手拿包男信封大容量手抓包真皮韩版潮商务休闲牛皮男包</a>
+				<a href="#nowhere" class="tmallLink">天猫专卖</a>
+				<div class="productInfo">
+					<span class="monthDeal">月成交<span class="productDealNumber">8笔</span></span>
+					<span class="productReview">评价<span class="productReviewNumber">19</span></span>
+					<span class="wangwang">
+						<a href="#nowhere" class="wangwanglink"><img src="../images/site/wangwang.png"></a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="productUnit" price="952.0">
+			<div class="productUnitFrame">
+				<a href="#nowhere"><img src="../images/product/6981.jpg" class="productImage" width="100px"></a>
+				<span class="productPrice">￥952.00</span>
+				<a href="#nowhere" class="productLink">犟牛男士手包真皮手拿包头层牛皮商务大容量手抓包软皮夹包信封包</a>
+				<a href="#nowhere" class="tmallLink">天猫专卖</a>
+				<div class="productInfo">
+					<span class="monthDeal">月成交<span class="productDealNumber">20笔</span></span>
+					<span class="productReview">评价<span class="productReviewNumber">16</span></span>
+					<span class="wangwang">
+						<a href="#nowhere" class="wangwanglink"><img src="../images/site/wangwang.png"></a>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+
+	</div>
+</div>
+
+<div class="footer" id="footer">
+	<div class="footer_ensure" id="footer_ensure">
+		<a href="#nowhere">
+			<img src="../images/site/ensure.png">
+		</a>
+	</div>
+
+	<div class="footer_desc" id="footer_desc">
+	<div class="fd_middle">
+		<div class="descColumn">
+			<span class="descColumnTitle">购物指南</span>
+			<a href="#nowhere">免费注册</a>
+			<a href="#nowhere">开通支付宝</a>
+			<a href="#nowhere">支付宝充值</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">天猫保障</span>
+			<a href="#nowhere">发票保障</a>
+			<a href="#nowhere">售后规则</a>
+			<a href="#nowhere">缺货赔付</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">支付方式</span>
+			<a href="#nowhere">快捷支付</a>
+			<a href="#nowhere">信用卡</a>
+			<a href="#nowhere">蚂蚁花呗</a>
+			<a href="#nowhere">货到付款</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">商家服务</span>
+			<a href="#nowhere">商家入驻</a>
+			<a href="#nowhere">商家中心</a>
+			<a href="#nowhere">天猫智库</a>
+			<a href="#nowhere">天猫规则</a>
+			<a href="#nowhere">物流服务</a>
+			<a href="#nowhere">喵言喵语</a>
+			<a href="#nowhere">运营服务</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">手机天猫</span>
+			<img src="../images/site/ma.png">
+		</div>
+	</div>
+	</div>
+	<div style="clear:both"></div>
+
+	<img class="cateye" src="../images/site/cateye.png">
+	<div class="copyright" id="copyright">
+	<div class="footer_bottom">
+		<div class="white_link">
+			<a href="#nowhere">关于天猫</a>
+			<a href="#nowhere">帮助中心</a>
+			<a href="#nowhere">开发平台</a>
+			<a href="#nowhere">诚聘英才</a>
+			<a href="#nowhere">联系我们</a>
+			<a href="#nowhere">网站合作</a>
+			<a href="#nowhere">法律声明</a>
+			<a href="#nowhere">知识产权</a>
+			<a href="#nowhere">廉正举报</a>
+		</div>
+		<div class="white_link">
+			<a href="#nowhere">阿里巴巴集团</a><span class="slash">|</span>
+			<a href="#nowhere">淘宝网</a><span class="slash">|</span>
+			<a href="#nowhere">天猫</a><span class="slash">|</span>
+			<a href="#nowhere">聚划算</a><span class="slash">|</span>
+			<a href="#nowhere">全球速变卖</a><span class="slash">|</span>
+			<a href="#nowhere">阿里巴巴国际交易市场</a><span class="slash">|</span>
+			<a href="#nowhere">1688</a><span class="slash">|</span>
+			<a href="#nowhere">阿里旅行</a><span class="slash">|</span>
+			<a href="#nowhere">阿里云计算</a><span class="slash">|</span>
+			<a href="#nowhere">阿里通信</a><span class="slash">|</span>
+			<a href="#nowhere">钉钉</a><span class="slash">|</span>
+			<a href="#nowhere">YunOS</a><span class="slash">|</span>
+			<a href="#nowhere">高德地图</a><span class="slash">|</span>
+			<a href="#nowhere">优视</a><span class="slash">|</span>
+			<a href="#nowhere">友盟</a><span class="slash">|</span>
+			<a href="#nowhere">虾米音乐</a><span class="slash">|</span>
+			<a href="#nowhere">天天动听</a><span class="slash">|</span>
+			<a href="#nowhere">支付宝</a><span class="slash">|</span>
+			<a href="#nowhere">蚂蚁金服</a><span class="slash">|</span>
+			<a href="#nowhere">花呗</a>
+		</div>
+		<div class="license">
+			<span>增值电信业务经营许可证：浙B2-20110446</span>
+			<span>网络文化经营许可证：浙网文[2025]0295-065号</span> 
+			<span>互联网医疗保健信息服务 审核同意书 浙卫网审 【2014】 6号</span>  
+			<span>互联网药品信息服务资质证书编号：浙-(经营性)-2012-0005</span>
+			<div class="copyrightYear">@2003-2018 TMALL.COM版权所有</div>
+			<div>
+				<img src="../images/site/copyRight1.jpg">
+                <img src="../images/site/copyRight2.jpg">
+			</div>
+		</div>
+	</div>
+    </div>
+</div>

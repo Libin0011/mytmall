@@ -1,0 +1,763 @@
+﻿<!DOCTYPE html>
+<script src="../frames/js/jquery/2.0.0/jquery.min.js"></script>
+<link href="../frames/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<script src="../frames/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+<style>
+body{
+	font-size: 12px;
+	font-family: Arial;
+}
+.nav_top a{
+	color: #999;
+}
+.tmallRed{
+	color: #C40000 !important;
+}
+nav.nav_top{
+	background-color: #f2f2f2;
+	padding: 5px 0px;
+	border-bottom: 1px solid #e7e7e7;
+}
+div.nav_middle{
+	max-width: 1024px;
+	margin: 0px auto;
+}
+nav.nav_top span{
+	margin: 0px 20px;
+	color: #999;
+}
+.nav_top span.glyphicon{
+	margin-right: 0px !important;
+}
+nav.nav_top a.login{
+	display: inline-block;
+	margin-right: 20px;
+}
+.nav_top a{
+	color: #999;
+}
+nav.nav_top a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+
+div.simpleSearchDiv{
+	max-width: 1024px;
+	margin: 0px auto;
+	position: relative;
+	height: 70px;
+}
+div.simpleSearch{
+	width: 300px;
+	height: 40px;
+	background-color: #C40000;
+	padding: 1px;
+	margin: 10px 20px 40px;
+	display: block;
+}
+div.simpleSearch input{
+	width: 225px;
+	height: 34px;
+	border: 1px solid transparent;
+	margin: 2px;
+	outline: none;
+}
+div.simpleSearch button{
+	width: 60px;
+	border: 1px solid transparent;
+	background-color: #C40000;
+	font-size: 14px;
+	color: white;
+	/*font-weight: bold;*/
+}
+div.searchBelow{
+	margin-left: -20px;
+	margin-top: 3px;
+}
+div.searchBelow span{
+	color: #999;
+}
+div.searchBelow a{
+	color: #999;
+	margin: 0px 20px;
+    font-size: 14px;
+}
+div.searchBelow a:hover{
+	text-decoration: none;
+	color: #C40000;
+}
+.simpleSearchDiv img{
+	position: absolute;
+	top: 50px;
+	left: 10px;
+	width: 140px;
+}
+
+.footer_ensure,.footer_desc a{
+	color: #999;
+}
+.footer_ensure,.footer_desc a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+div.footer{
+	margin: 10px 0px;
+	border-top: 1px solid #e7e7e7;
+}
+div.footer_ensure{
+	margin: 24px 0px;
+	text-align: center;
+}
+div.fd_middle{
+	max-width: 1024px;
+	margin: 0px auto;
+}
+div.footer_desc{
+	margin: 0px 20px;
+	border-top: 1px solid #e7e7e7;
+	padding: 30px;
+}
+div.footer_desc div.descColumn{
+	width: 20%;
+	float: left;
+	padding-left: 15px;
+}
+div.footer_desc div.descColumn span.descColumnTitle{
+    font-size: 16px;
+    color: #646464;
+    font-weight: bold;
+}
+div.footer_desc div.descColumn a{
+	display: block;
+	padding-top: 3px;
+}
+div.footer_desc div.descColumn img{
+	display: block;
+	padding-top: 3px;
+}
+
+.copyright a{
+	color: white;
+}
+.copyright a:hover{
+	text-decoration: none;
+	color: white;
+}
+div.footer_bottom{
+	max-width: 1024px;
+	margin: 0px auto;
+}
+div.copyright{
+	background-color: black;
+	border-top: 2px solid #C40000;
+}
+div.copyright div.white_link{
+	padding-top: 15px;
+	padding-left: 10px;
+}
+div.copyright div.white_link a{
+	margin: 0px 5px;
+}
+div.copyright div.white_link span.slash{
+	color: white;
+}
+div.copyright div.license{
+	margin-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+div.copyright div.license span{
+	color: #A4A4A4;
+}
+div.copyright div.license div{
+	padding-top: 10px;
+}
+div.copyright div.license div.copyrightYear{
+	color: #686868;
+	
+}
+img.cateye{
+	margin-left: 173px;
+}
+
+div.boughtDiv{
+	max-width: 1013px;
+	margin: 20px auto;
+}
+.orderType div{
+	float: left;
+	border-bottom: 2px solid #e8e8e8;
+}
+.orderType a{
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+	border-right: 1px #e8e8e8 solid;
+	display: inline-block;
+	margin: 12px 0px;
+	padding: 0px 20px;
+}
+.noRightBorder{
+	border-right: 0px !important;
+}
+.orderType .orderTypeLastOne{
+	float: none!important;
+	overflow: hidden;
+	height: 48px;
+}
+.selectedOrderType{
+	border-bottom: 2px solid #C40000 !important;
+}
+.selectedOrderType a{
+	color: #C40000;
+	text-decoration: none;
+}
+.orderType a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+.boughtDiv .orderListTitle{
+	border: 1px solid #e8e8e8;
+	margin: 20px 0px;
+	background-color: #f5f5f5;
+}
+.orderListTitleTable{
+	width: 100%;
+}
+.orderListTitleTable td{
+	text-align: center;
+	padding: 12px 0px;
+}
+.orderListItemTable{
+	border: 2px solid #ECECEC; 
+	margin: 20px 0px;
+	width: 100%;
+}
+.orderListItemTable:hover{
+	border: 2px solid #aaa;
+}
+.orderListItemFirstTR{
+    background-color: #f1f1f1;
+
+}
+.wangwangImg{
+	display: inline-block;
+	width: 67px;
+	height: 22px;
+	background-image: url(../images/site/wangwang.gif);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-color: transparent;
+	background-position: 0px 0px;
+	position: relative;
+	left: 2px;
+	top: 0px;
+}
+.orderListItemTable td{
+	padding: 8px 10px;
+}
+.orderItemDeleteTD{
+	text-align: right;
+}
+.orderListItemDelete{
+	font-size: 16px;
+	margin-right: 10px;
+	color: #999; 
+}
+.orderItemProductLinkOut{
+	height: 80px;
+	position: relative;
+}
+.orderListItemProductLinkInnerDiv{
+	position: absolute;
+	bottom: 0px;
+}
+.orderListItemProductOriginalPrice{
+	color: #999;
+	font-size: 14px;
+}
+.orderListItemProdictPrice{
+	color: #3c3c3c;
+	font-size: 14px;
+}
+.orderListItemNumberTD{
+	text-align: center;
+}
+.orderListItemProductRealPriceTD{
+	text-align: center;
+}
+.orderListItemProductRealPrice{
+	font-weight: bold;
+	color: black;
+	font-size: 14px;
+}
+.orderListItemPriceWithTransport{
+	color:#6c6c6c;
+}
+.orderListItemButtonTD{
+	text-align: center;
+}
+.orderListItemReview{
+	background-color: white;
+	border: 1px solid #dcdcdc;
+	width: 50px;
+	height: 32px;
+	color: black;
+	font-weight: bold;
+	border-radius: 2px;
+}
+.orderListItemReview:hover{
+	border-color: #C40000;
+	color: #C40000;
+}
+.orderListItemConfirm{
+	width: 76px;
+	height: 30px;
+	background-color: #66B6FF;
+	border-width: 0px;
+	color: white;
+	font-weight: bold;
+	border-radius: 2px;
+}
+.orderListItemConfirm:hover{
+	background-color: #118ADB;
+}
+.orderListItemPay{
+	width: 50px;
+	height: 30px;
+	background-color: #66B6FF;
+	border-width: 0px;
+	color: white;
+	font-weight: bold;
+	border-radius: 2px;
+}
+.orderListItemPay:hover{
+	background-color: #118ADB;
+}
+.orderListItemDelivery{
+	width: 80px;
+	height: 30px;
+	background-color: #66B6FF;
+	border-width: 0px;
+	color: white;
+	font-weight: bold;
+	border-radius: 2px;
+}
+.orderListItemDelivery:hover{
+	background-color: #118ADB;
+}
+a{
+	color: #999;
+}
+a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+.orderItemProductInfoPartTD{
+	border: 1px solid #ECECEC;
+}
+</style>
+
+<script>
+$(function(){
+	$("a[orderstatus]").click(function(){
+		var orderstatus = $(this).attr("orderstatus");
+		$("div.orderType div").removeClass("selectedOrderType");
+		$(this).parent("div").addClass("selectedOrderType");
+		$("table.orderListItemTable").each(function(){
+            if("all" == orderstatus){
+            	$("table[orderstatus]").show();
+            }     
+            else{
+            	$("table[orderstatus]").hide();
+            	$("table[orderstatus="+orderstatus+"]").show();
+            }
+		});
+	});
+});
+</script>
+
+<nav class="nav_top">
+<div class="nav_middle">
+	<a href="homePage.html">
+		<span class="glyphicon glyphicon-home tmallRed"></span>
+		天猫首页
+	</a>
+
+	<span>喵，欢迎来到天猫</span>
+	<a href="#nowhere" class="login">请登录</a>
+	<a href="#nowhere">免费注册</a>
+
+	<div class="pull-right">
+		<a href="#nowhere">我的订单</a>
+		<a href="cartPage.html">
+			<span class="glyphicon glyphicon-shopping-cart tmallRed"></span>
+			购物车<strong>2</strong>件
+		</a>
+	</div>
+</div>
+</nav>
+
+<div class="simpleSearchDiv">
+	<a href="#nowhere">
+		<img src="../images/site/simpleLogo.png">
+	</a>
+
+	<div class="pull-right simpleSearch">
+		<input type="text" name="keyword" placeholder="男士西服 原汁机">
+		<button type="submit" class="searchBtn">搜天猫</button>
+		<div class="searchBelow">
+			<a href="#nowhere">冰箱</a><span>|</span>
+			<a href="#nowhere">空调</a><span>|</span>
+			<a href="#nowhere">男装</a><span>|</span>
+			<a href="#nowhere">女装</a>
+		</div>
+	</div>
+</div>
+
+<div class="boughtDiv">
+	<div class="orderType">
+		<div class="selectedOrderType"><a href="#nowhere" orderstatus="all">所有订单</a></div>
+		<div><a href="#nowhere" orderstatus="waitPay">待付款</a></div>
+        <div><a href="#nowhere" orderstatus="waitDelivery">待发货</a></div>
+        <div><a href="#nowhere" orderstatus="waitConfirm">待收货</a></div>
+        <div><a href="#nowhere" orderstatus="waitReview" class="noRightBorder">待评价</a></div>
+        <div class="orderTypeLastOne"></div>
+	</div>
+	<div style="clear: both;"></div>
+
+	<div class="orderListTitle">
+		<table class="orderListTitleTable">
+			<tbody>
+				<tr>
+					<td>宝贝</td>
+					<td width="100px">单价</td>
+					<td width="100px">数量</td>
+					<td width="120px">实付款</td>
+					<td width="100px">交易操作</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+    	<div class="orderListItem">
+		<table oiid="1" orderstatus="waitReview" class="orderListItemTable">
+			<tbody>
+			<tr class="orderListItemFirstTR">
+				<td colspan="2">
+					<b>2018-10-01 15:26:01</b>
+					<span>订单号：201810011526014509480</span>
+				</td>
+				<td colspan="2">
+					<img src="../images/site/orderItemTmall.png" width="13px">天猫商城
+				</td>
+				<td colspan="1">
+					<a href="#nowhere" class="wangwanglink">
+						<div class="wangwangImg"></div>
+					</a>
+				</td>
+				<td class="orderItemDeleteTD">
+					<a href="#nowhere" class="deleteOrderLink" oiid="1">
+						<span class="orderListItemDelete glyphicon glyphicon-trash"></span>
+					</a>
+				</td>
+			</tr>
+			<tr class="orderItemProductInfoPartTR">
+				<td class="orderItemProductInfoPartTD">
+					<img src="../images/product/m3796.jpg" width="80px" height="80px">
+				</td>
+				<td class="orderItemProductInfoPartTD">
+					<div class="orderItemProductLinkOut">
+						<a href="#nowhere">公众智能扫地机器人家用全自动电动清洁地毯擦拖地一体机吸尘器</a>
+						<div class="orderListItemProductLinkInnerDiv">
+							<img src="../images/site/creditcard.png" title="支持信用卡支付">
+							<img src="../images/site/7day.png" title="消费者保障服务，承诺7天退货">
+							<img src="../images/site/promise.png" title="消费者保障服务，承诺如实描述">
+						</div>
+					</div>
+				</td>
+				<td class="orderItemProductInfoPartTD" width="100px">
+					<div class="orderListItemProductOriginalPrice">￥2,499.00</div>
+					<div class="orderListItemProdictPrice">￥2,124.05</div>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemNumberTD " rowspan="1" width="100px" valign="top">
+					<span class="orderListItemNumber">1</span>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemProductRealPriceTD" width="120px" rowspan="1" valign="top">
+					<div class="orderListItemProductRealPrice">￥2,124.05</div>
+					<div class="orderListItemPriceWithTransport">（含运费:￥0.00)</div>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemButtonTD" width="100px" valign="top" rowspan="1">
+					<a href="#nowhere">
+						<button class="orderListItemReview">评价</button>
+					</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<table oiid="2" orderstatus="waitConfirm" class="orderListItemTable">
+			<tbody>
+			<tr class="orderListItemFirstTR">
+				<td colspan="2">
+					<b>2018-10-01 15:37:20</b>
+					<span>订单号：201810011537205646894</span>
+				</td>
+				<td colspan="2">
+					<img src="../images/site/orderItemTmall.png" width="13px">天猫商城
+				</td>
+				<td colspan="1">
+					<a href="#nowhere" class="wangwanglink">
+						<div class="wangwangImg"></div>
+					</a>
+				</td>
+				<td class="orderItemDeleteTD">
+					<a href="#nowhere" class="deleteOrderLink" oiid="2">
+						<span class="orderListItemDelete glyphicon glyphicon-trash"></span>
+					</a>
+				</td>
+			</tr>
+			<tr class="orderItemProductInfoPartTR">
+				<td class="orderItemProductInfoPartTD">
+					<img src="../images/product/m6651.jpg" width="80px" height="80px">
+				</td>
+				<td class="orderItemProductInfoPartTD">
+					<div class="orderItemProductLinkOut">
+						<a href="#nowhere">ULIFE原创信封包男个性真皮手包男士手拿包休闲男包手抓包拉链潮</a>
+						<div class="orderListItemProductLinkInnerDiv">
+							<img src="../images/site/creditcard.png" title="支持信用卡支付">
+							<img src="../images/site/7day.png" title="消费者保障服务，承诺7天退货">
+							<img src="../images/site/promise.png" title="消费者保障服务，承诺如实描述">
+						</div>
+					</div>
+				</td>
+				<td class="orderItemProductInfoPartTD" width="100px">
+					<div class="orderListItemProductOriginalPrice">￥1,188.00</div>
+					<div class="orderListItemProdictPrice">￥1,128.60</div>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemNumberTD " rowspan="1" width="100px" valign="top">
+					<span class="orderListItemNumber">1</span>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemProductRealPriceTD" width="120px" rowspan="1" valign="top">
+					<div class="orderListItemProductRealPrice">￥1,128.60</div>
+					<div class="orderListItemPriceWithTransport">（含运费:￥0.00)</div>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemButtonTD" width="100px" valign="top" rowspan="1">
+					<a href="#nowhere">
+						<button class="orderListItemConfirm">确认收货</button>
+					</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<table oiid="3" orderstatus="waitPay" class="orderListItemTable">
+			<tbody>
+			<tr class="orderListItemFirstTR">
+				<td colspan="2">
+					<b>2018-10-01 15:37:20</b>
+					<span>订单号：201810011537205646894</span>
+				</td>
+				<td colspan="2">
+					<img src="../images/site/orderItemTmall.png" width="13px">天猫商城
+				</td>
+				<td colspan="1">
+					<a href="#nowhere" class="wangwanglink">
+						<div class="wangwangImg"></div>
+					</a>
+				</td>
+				<td class="orderItemDeleteTD">
+					<a href="#nowhere" class="deleteOrderLink" oiid="3">
+						<span class="orderListItemDelete glyphicon glyphicon-trash"></span>
+					</a>
+				</td>
+			</tr>
+			<tr class="orderItemProductInfoPartTR">
+				<td class="orderItemProductInfoPartTD">
+					<img src="../images/product/8510.jpg" width="80px" height="80px">
+				</td>
+				<td class="orderItemProductInfoPartTD">
+					<div class="orderItemProductLinkOut">
+						<a href="#nowhere">名媛2016新款女装夏两件套裤韩版雪纺七分裤阔腿裤休闲时尚套装女</a>
+						<div class="orderListItemProductLinkInnerDiv">
+							<img src="../images/site/creditcard.png" title="支持信用卡支付">
+							<img src="../images/site/7day.png" title="消费者保障服务，承诺7天退货">
+							<img src="../images/site/promise.png" title="消费者保障服务，承诺如实描述">
+						</div>
+					</div>
+				</td>
+				<td class="orderItemProductInfoPartTD" width="100px">
+					<div class="orderListItemProductOriginalPrice">￥399.00</div>
+					<div class="orderListItemProdictPrice">￥379.05</div>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemNumberTD " rowspan="1" width="100px" valign="top">
+					<span class="orderListItemNumber">1</span>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemProductRealPriceTD" width="120px" rowspan="1" valign="top">
+					<div class="orderListItemProductRealPrice">￥379.05</div>
+					<div class="orderListItemPriceWithTransport">（含运费:￥0.00)</div>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemButtonTD" width="100px" valign="top" rowspan="1">
+					<a href="#nowhere">
+						<button class="orderListItemPay">付款</button>
+					</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<table oiid="4" orderstatus="waitDelivery" class="orderListItemTable">
+			<tbody>
+			<tr class="orderListItemFirstTR">
+				<td colspan="2">
+					<b>2018-10-01 15:37:20</b>
+					<span>订单号：201810011537205646894</span>
+				</td>
+				<td colspan="2">
+					<img src="../images/site/orderItemTmall.png" width="13px">天猫商城
+				</td>
+				<td colspan="1">
+					<a href="#nowhere" class="wangwanglink">
+						<div class="wangwangImg"></div>
+					</a>
+				</td>
+				<td class="orderItemDeleteTD">
+					<a href="#nowhere" class="deleteOrderLink" oiid="4">
+						<span class="orderListItemDelete glyphicon glyphicon-trash"></span>
+					</a>
+				</td>
+			</tr>
+			<tr class="orderItemProductInfoPartTR">
+				<td class="orderItemProductInfoPartTD">
+					<img src="../images/product/m5662.jpg" width="80px" height="80px">
+				</td>
+				<td class="orderItemProductInfoPartTD">
+					<div class="orderItemProductLinkOut">
+						<a href="#nowhere">劳士顿专柜正品 防水钨钢手链女表潮流时尚时装石英手表女士腕表</a>
+						<div class="orderListItemProductLinkInnerDiv">
+							<img src="../images/site/creditcard.png" title="支持信用卡支付">
+							<img src="../images/site/7day.png" title="消费者保障服务，承诺7天退货">
+							<img src="../images/site/promise.png" title="消费者保障服务，承诺如实描述">
+						</div>
+					</div>
+				</td>
+				<td class="orderItemProductInfoPartTD" width="100px">
+					<div class="orderListItemProductOriginalPrice">￥800.00</div>
+					<div class="orderListItemProdictPrice">￥600.00</div>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemNumberTD " rowspan="1" width="100px" valign="top">
+					<span class="orderListItemNumber">1</span>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemProductRealPriceTD" width="120px" rowspan="1" valign="top">
+					<div class="orderListItemProductRealPrice">￥600.00</div>
+					<div class="orderListItemPriceWithTransport">（含运费:￥0.00)</div>
+				</td>
+				<td class="orderItemProductInfoPartTD orderListItemButtonTD" width="100px" valign="top" rowspan="1">
+					<a href="#nowhere">
+						<span style="color: #6c6c6c;">待发货</span>
+						<button class="orderListItemDelivery">催卖家发货</button>
+					</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="footer" id="footer">
+	<div class="footer_ensure" id="footer_ensure">
+		<a href="#nowhere">
+			<img src="../images/site/ensure.png">
+		</a>
+	</div>
+
+	<div class="footer_desc" id="footer_desc">
+	<div class="fd_middle">
+		<div class="descColumn">
+			<span class="descColumnTitle">购物指南</span>
+			<a href="#nowhere">免费注册</a>
+			<a href="#nowhere">开通支付宝</a>
+			<a href="#nowhere">支付宝充值</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">天猫保障</span>
+			<a href="#nowhere">发票保障</a>
+			<a href="#nowhere">售后规则</a>
+			<a href="#nowhere">缺货赔付</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">支付方式</span>
+			<a href="#nowhere">快捷支付</a>
+			<a href="#nowhere">信用卡</a>
+			<a href="#nowhere">蚂蚁花呗</a>
+			<a href="#nowhere">货到付款</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">商家服务</span>
+			<a href="#nowhere">商家入驻</a>
+			<a href="#nowhere">商家中心</a>
+			<a href="#nowhere">天猫智库</a>
+			<a href="#nowhere">天猫规则</a>
+			<a href="#nowhere">物流服务</a>
+			<a href="#nowhere">喵言喵语</a>
+			<a href="#nowhere">运营服务</a>
+		</div>
+		<div class="descColumn">
+			<span class="descColumnTitle">手机天猫</span>
+			<img src="../images/site/ma.png">
+		</div>
+	</div>
+	</div>
+	<div style="clear:both"></div>
+
+	<img class="cateye" src="../images/site/cateye.png">
+	<div class="copyright" id="copyright">
+	<div class="footer_bottom">
+		<div class="white_link">
+			<a href="#nowhere">关于天猫</a>
+			<a href="#nowhere">帮助中心</a>
+			<a href="#nowhere">开发平台</a>
+			<a href="#nowhere">诚聘英才</a>
+			<a href="#nowhere">联系我们</a>
+			<a href="#nowhere">网站合作</a>
+			<a href="#nowhere">法律声明</a>
+			<a href="#nowhere">知识产权</a>
+			<a href="#nowhere">廉正举报</a>
+		</div>
+		<div class="white_link">
+			<a href="#nowhere">阿里巴巴集团</a><span class="slash">|</span>
+			<a href="#nowhere">淘宝网</a><span class="slash">|</span>
+			<a href="#nowhere">天猫</a><span class="slash">|</span>
+			<a href="#nowhere">聚划算</a><span class="slash">|</span>
+			<a href="#nowhere">全球速变卖</a><span class="slash">|</span>
+			<a href="#nowhere">阿里巴巴国际交易市场</a><span class="slash">|</span>
+			<a href="#nowhere">1688</a><span class="slash">|</span>
+			<a href="#nowhere">阿里旅行</a><span class="slash">|</span>
+			<a href="#nowhere">阿里云计算</a><span class="slash">|</span>
+			<a href="#nowhere">阿里通信</a><span class="slash">|</span>
+			<a href="#nowhere">钉钉</a><span class="slash">|</span>
+			<a href="#nowhere">YunOS</a><span class="slash">|</span>
+			<a href="#nowhere">高德地图</a><span class="slash">|</span>
+			<a href="#nowhere">优视</a><span class="slash">|</span>
+			<a href="#nowhere">友盟</a><span class="slash">|</span>
+			<a href="#nowhere">虾米音乐</a><span class="slash">|</span>
+			<a href="#nowhere">天天动听</a><span class="slash">|</span>
+			<a href="#nowhere">支付宝</a><span class="slash">|</span>
+			<a href="#nowhere">蚂蚁金服</a><span class="slash">|</span>
+			<a href="#nowhere">花呗</a>
+		</div>
+		<div class="license">
+			<span>增值电信业务经营许可证：浙B2-20110446</span>
+			<span>网络文化经营许可证：浙网文[2025]0295-065号</span> 
+			<span>互联网医疗保健信息服务 审核同意书 浙卫网审 【2014】 6号</span>  
+			<span>互联网药品信息服务资质证书编号：浙-(经营性)-2012-0005</span>
+			<div class="copyrightYear">@2003-2018 TMALL.COM版权所有</div>
+			<div>
+				<img src="../images/site/copyRight1.jpg">
+                <img src="../images/site/copyRight2.jpg">
+			</div>
+		</div>
+	</div>
+    </div>
+</div>
